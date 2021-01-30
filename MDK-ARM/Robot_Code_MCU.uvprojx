@@ -134,11 +134,11 @@
             <RunIndependent>0</RunIndependent>
             <UpdateFlashBeforeDebugging>1</UpdateFlashBeforeDebugging>
             <Capability>1</Capability>
-            <DriverSelection>4107</DriverSelection>
+            <DriverSelection>4101</DriverSelection>
           </Flash1>
           <bUseTDR>1</bUseTDR>
           <Flash2>STLink\ST-LINKIII-KEIL_SWO.dll</Flash2>
-          <Flash3></Flash3>
+          <Flash3>"" ()</Flash3>
           <Flash4></Flash4>
           <pFcarmOut></pFcarmOut>
           <pFcarmGrp></pFcarmGrp>
@@ -338,7 +338,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F103xB</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;  ../Drivers/STM32F1xx_HAL_Driver/Inc;  ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include;  ../Drivers/CMSIS/Include; ../Middlewares/Third_Party/FreeRTOS/Source/include; ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS</IncludePath>
+              <IncludePath>../Core/Inc;            ../Drivers/STM32F1xx_HAL_Driver/Inc;            ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;            ../Drivers/CMSIS/Device/ST/STM32F1xx/Include;            ../Drivers/CMSIS/Include;            ../Middlewares/Third_Party/FreeRTOS/Source/include;            ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3;            ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;            ..\Work_Task\arithmetic_task;            ..\Work_Task\contral_task;            ..\Work_Task\user_task;            ..\Work_Task\contral_task;            ..\Work_Task\arithmetic_task;            ..\Hardware\motor</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -566,6 +566,36 @@
               <FileName>port.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/port.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>My_Task</GroupName>
+          <Files>
+            <File>
+              <FileName>user_task.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Work_Task\user_task\user_task.c</FilePath>
+            </File>
+            <File>
+              <FileName>contral_task.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Work_Task\contral_task\contral_task.c</FilePath>
+            </File>
+            <File>
+              <FileName>arithmetic_task.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Work_Task\arithmetic_task\arithmetic_task.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Hardware</GroupName>
+          <Files>
+            <File>
+              <FileName>motor.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Hardware\motor\motor.c</FilePath>
             </File>
           </Files>
         </Group>

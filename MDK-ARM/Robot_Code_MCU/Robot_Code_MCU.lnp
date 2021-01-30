@@ -32,6 +32,10 @@
 "robot_code_mcu\cmsis_os.o"
 "robot_code_mcu\heap_4.o"
 "robot_code_mcu\port.o"
+"robot_code_mcu\user_task.o"
+"robot_code_mcu\contral_task.o"
+"robot_code_mcu\arithmetic_task.o"
+"robot_code_mcu\motor.o"
 --library_type=microlib --strict --scatter "Robot_Code_MCU\Robot_Code_MCU.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

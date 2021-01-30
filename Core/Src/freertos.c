@@ -26,6 +26,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "user_task.h"
 
 /* USER CODE END Includes */
 
@@ -49,6 +50,8 @@
 
 /* USER CODE END Variables */
 osThreadId defaultTaskHandle;
+osThreadId UserTaskHandle;
+osThreadId ContralTaskHandle;
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -56,6 +59,8 @@ osThreadId defaultTaskHandle;
 /* USER CODE END FunctionPrototypes */
 
 void StartDefaultTask(void const * argument);
+extern void User_Task(void const * argument);
+extern void Contral_Task(void const * argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -105,6 +110,14 @@ void MX_FREERTOS_Init(void) {
   /* definition and creation of defaultTask */
   osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 128);
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
+
+  /* definition and creation of UserTask */
+  osThreadDef(UserTask, User_Task, osPriorityLow, 0, 128);
+  UserTaskHandle = osThreadCreate(osThread(UserTask), NULL);
+
+  /* definition and creation of ContralTask */
+  osThreadDef(ContralTask, Contral_Task, osPriorityNormal, 0, 128);
+  ContralTaskHandle = osThreadCreate(osThread(ContralTask), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
